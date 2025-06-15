@@ -1,0 +1,21 @@
+"""
+SHIPGRRR GAME CREDITS:
+
+ShipGrrr is written in Python IDLE and the Pygame library, authored by Michelle Bliss with some strategic assistance from Google's Gemini artificial intelligence program.
+
+Credit for The Kraken tentacle goes to Gemini as the AI insisted on including tentacles to enrich the game's playability and improve its design concept.
+
+Michelle Bliss's artistic collaboration on The Kraken's tentacles was to develop it in the manner of the mythical Norse sea monster that randomly pops up from beneath the sea.
+
+The mythical Kraken creature is depicted by a coded chain of balls that swings and hits the ship.
+
+The chain-of-balls concept was demonstrated during a Code in Place game design workshop.
+
+Google's Gemini AI provided the mathematics for drawing The Kraken tentacle chain of balls and calculating its swinging motions.
+
+The AI also helped with the math coding for the game's aesthetic environment (e.g. ship, sun, orca patch, etc.).
+
+Collaborative writing credit goes to Patrick Trotta, Michelle Bliss's business partner. With a creative synergy somewhat in the manner of Lennon and McCartney,
+this writing team infused their conceptualization skills into the gaming-motivational text and helped enhance the game's starting safety zone.
+
+"""
