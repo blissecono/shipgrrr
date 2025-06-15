@@ -11,11 +11,11 @@ As the navigator on Captain Kai’s ship, you must watch out for and avoid:
 
 Ship Hazards & Sea Creatures you will encounter, such as -
 * Icebergs: Stationary ship-sinking obstacles appearing randomly near the top refueling zone at the start of each new game round.
-* Orcas: These large sea creatures, also known as “killer whales,” swim across the ship’s navigation lanes.
+* Orcas: These large sea creatures, also known as "killer whales," swim across the ship’s navigation lanes.
 * Cachalots: 50-foot toothed whales that swim from side to side and appear in open lanes.
 * Kraken Tentacles: These monster-like arms unexpectedly rise up from the ocean depths and can drag a ship down below the water.
 
-Ship navigators beware! Collisions with these hazards and sea creatures can damage or sink your ship. Steer your **ship's course** WISELY to avoid a shipwreck.
+Ship navigators beware! Collisions with these hazards and sea creatures can damage or sink your ship. Steer your ship's course WISELY to avoid a shipwreck.
 
 Challenge:
 
@@ -162,7 +162,7 @@ WELCOME_TEXT_DURATION = 20 * 20 # 20 seconds * 60 frames per second = 1200 frame
 
 # Rotating Messages for the Bottom Starter Safety Zone
 # Message sets are items in the list as a tuple: ((left_line1, left_line2), (right_line1, right_line2))
-BOTTOM_MESSAGES = [
+MOTIVATIONAL_MESSAGES = [
     # Set 1: Core Gaming Instructions - Always Essential
     (("Move by using the up,", "right, and left arrow keys."),
      ("Navigate Captain Kai's ship", "up to the green refuel zone.")),
@@ -209,11 +209,11 @@ BOTTOM_MESSAGES = [
 ]
 
 # Timer for cycling messages
-BOTTOM_MESSAGE_TIMER = 0
-BOTTOM_MESSAGE_CYCLE_DURATION = 5 * 80 # 5 seconds * 60 frames per second = 300 frames
+MOTIVATIONAL_MESSAGE_TIMER = 0
+MOTIVATIONAL_MESSAGE_CYCLE_DURATION = 5 * 80 # 5 seconds * 60 frames per second = 300 frames
 
 # Index to track which message set is currently displayed
-CURRENT_BOTTOM_MESSAGE_INDEX = 0
+CURRENT_MOTIVATIONAL_MESSAGE_INDEX = 0
 
 # --- OCEAN SWIM LANES / ROW PROPERTIES 
 
@@ -898,11 +898,11 @@ while running:
 
         # Update the bottom message timer - the messages will cycle only during active gameplay
         if not game_won: # Messeges won't cycle if game is won
-            BOTTOM_MESSAGE_TIMER += 1
-            if BOTTOM_MESSAGE_TIMER >= BOTTOM_MESSAGE_CYCLE_DURATION:
-                BOTTOM_MESSAGE_TIMER = 0 # Reset timer
+            MOTIVATIONAL_MESSAGE_TIMER += 1
+            if MOTIVATIONAL_MESSAGE_TIMER >= MOTIVATIONAL_MESSAGE_CYCLE_DURATION:
+                MOTIVATIONAL_MESSAGE_TIMER = 0 # Reset timer
                 # Move to the next message set, looping back to the start if it reaches the end of the list
-                CURRENT_BOTTOM_MESSAGE_INDEX = (CURRENT_BOTTOM_MESSAGE_INDEX + 1) % len(BOTTOM_MESSAGES)
+                CURRENT_MOTIVATIONAL_MESSAGE_INDEX = (CURRENT_MOTIVATIONAL_MESSAGE_INDEX + 1) % len(MOTIVATIONAL_MESSAGES)
 
         # --- COLLISION DETECTION LOGIC ---
 
@@ -1174,7 +1174,7 @@ while running:
     # Text sets will rotate and be displayed while the game is active
     if not game_over and not game_won:
         # Get the current message set based on the index
-        current_left_messages, current_right_messages = BOTTOM_MESSAGES[CURRENT_BOTTOM_MESSAGE_INDEX]
+        current_left_messages, current_right_messages = MOTIVATIONAL_MESSAGES[CURRENT_MOTIVATIONAL_MESSAGE_INDEX]
 
         # Assign lines from the current set
         left_line1_content = current_left_messages[0]
